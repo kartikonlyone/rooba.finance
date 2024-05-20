@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const ReusableSlider = ({ images, settings }) => {
-  return (
+  return ( 
     <Slider {...settings}>
       {images.map((image, index) => (
         <div key={index}>

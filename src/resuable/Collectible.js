@@ -3,7 +3,7 @@ import collectible from '@/app/images/collectible.png';
 import Image from 'next/image';
 
 const Collectible = () => {
-  return (
+  return ( 
     <>
       <div className='collectible_single'>
                         <div className='collectible_head'>

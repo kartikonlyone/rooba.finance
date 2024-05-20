@@ -3,7 +3,7 @@ import Image from 'next/image';
 import index_1 from '@/app/images/index_1.png'
 import sing from '@/app/images/sing.png'
 import art from '@/app/images/art.png' 
-const homepage = () => {
+const homepage = () => { 
   return (
     <>
         <div className="container home">

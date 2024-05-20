@@ -4,7 +4,7 @@ import Homepage from '@/app/components/homepage'
 import Events from '@/app/components/events'
 
 export default function Home() {
-  return (
+  return ( 
      <> 
      <Homepage/>
      <Events/>
