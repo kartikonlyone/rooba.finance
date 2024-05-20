@@ -15,7 +15,9 @@ import collection_4 from '@/app/images/collection_4.png';
 import artist_1 from '@/app/images/artist_1.png';
 import artist_2 from '@/app/images/artist_2.png';
 import artist_3 from '@/app/images/artist_3.png';
-import collection_slide from '@/app/images/collection_slide.png';
+// import collectible from '@/app/images/collectible.png';
+import Collectible from '@/resuable/Collectible';
+import ReusableSlider from '@/resuable/ReusableSlider';
 import people from '@/app/images/people.png';
 import qr from '@/app/images/qr.png';
 
@@ -30,7 +32,18 @@ const Events = () => {
     autoplay: true, 
     autoplaySpeed: 2000,
   };
-
+    const EventsImages = [
+      { src: event_1, alt: 'Event 1' },
+      { src: event_2, alt: 'Event 2' },
+      { src: event_3, alt: 'Event 3' },
+      { src: event_4, alt: 'Event 4' },
+    ];
+    const CollectionImages = [
+      { src: collection_1, alt: 'Event 1' },
+      { src: collection_2, alt: 'Event 2' },
+      { src: collection_3, alt: 'Event 3' },
+      { src: collection_4, alt: 'Event 4' },
+    ];
   const toggleView = () => {
     setView(view === 'events' ? 'collections' : 'events');
   };
@@ -45,12 +58,7 @@ const Events = () => {
                 <h1>ASTR <br />IX <br /> <br />EVE <br />NTS</h1>
               </div>
               <div className="events_slider">
-                <Slider {...settings}> 
-                  <Image src={event_1} alt="Event 1"/>  
-                  <Image src={event_2} alt="Event 2"  /> 
-                  <Image src={event_3} alt="Event 3"  /> 
-                  <Image src={event_4} alt="Event 4"  /> 
-                </Slider>
+              <ReusableSlider images={EventsImages} settings={settings} />
               </div>
             </div>
           </div>
@@ -103,12 +111,7 @@ const Events = () => {
                 <h1>ASTR <br />IX <br /> <br />EVE <br />NTS</h1>
               </div>
               <div className="events_slider">
-                <Slider {...settings}> 
-                  <Image src={collection_1} alt="Event 1"/>  
-                  <Image src={collection_2} alt="Event 2"  /> 
-                  <Image src={collection_3} alt="Event 3"  /> 
-                  <Image src={collection_4} alt="Event 4"  /> 
-                </Slider>
+              <ReusableSlider images={CollectionImages} settings={settings} />
               </div>
             </div>
           </div>
@@ -137,10 +140,10 @@ const Events = () => {
                   </div>
                   <div className='artist mt-3'>
                     <h2>Collectibles</h2>
-                    <div className='artist_img flex mt-5 gap-2'>
-                      <Image src={collection_slide} alt="Artist 1"/>
-                      <Image src={collection_slide} alt="Artist 1"/>
-                      <Image src={collection_slide} alt="Artist 1"/>
+                    <div className='artist_img flex mt-5 gap-2'> 
+                    <Collectible/>
+                    <Collectible/>
+                    <Collectible/>
                     </div>
                   </div> 
                   <div className='join mt-4 flex justify-end'>  
@@ -153,13 +156,15 @@ const Events = () => {
         </div>
         </div>
       )}
-       
-      <button onClick={toggleView} className={view === 'events' ? 'toggle_btn_events active' : 'toggle_btn_events'}>
+       <div className='pb-4 ml-3 toogle_btn'>
+       <button onClick={toggleView} className={view === 'events' ? 'toggle_btn_events active' : 'toggle_btn_events'}>
         Events
       </button>
       <button onClick={toggleView} className={view === 'collections' ? 'toggle_btn_collections active' : 'toggle_btn_collections'}>
         Collections
       </button>
+       </div>
+     
     </div>
   );
 };

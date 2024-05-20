@@ -83,34 +83,13 @@ color: #000;
   50% {
     transform: translateX(50%);
   }
-}
-/* @keyframes slideInCulture {
-  0%, 100% {
-    transform: translateX(80%);
-  }
-  50% {
-    transform: translateX(100%);
-  }
-} */
-
-/* Apply width animation to .slide_left and .slide_right */
+} 
 .slide_left{
   animation: changeWidth 5s ease-in-out infinite alternate;
 }
 .slide_right {
   animation: changeWidthRight 5s ease-in-out infinite alternate;
-}
-
-/* Apply both width and translation animations to .slide_left */
-/* .slide_left .span_text {
-  animation: changeWidth 2s ease-in-out infinite alternate, slideIn 2s linear infinite;
-} */
-
-/* Apply both width and translation animations to .slide_right */
-/* .slide_right .span_text {
-  animation: changeWidthRight 2s ease-in-out infinite alternate, slideIn 2s linear infinite;
-} */
-
+} 
 .span_text {
   display: inline-block;
   background-color: #fff4df;
@@ -260,18 +239,80 @@ color: #000;
 }
 .toggle_btn_events{
   background-color: #282B30;
-  padding: 20px;
+  padding: 15px 40px;
   border-radius: 100px 0 0 100px;
   font-weight: 700;
   font-size: 18px;
 }
 .toggle_btn_collections{
   background-color: #282B30;
-  padding: 20px;
+  padding: 15px 40px;
   border-radius: 0 100px 100px 0;
   font-weight: 700;
   font-size: 18px;
 }
 .toggle_btn_collections.active,.toggle_btn_events.active{
   background-color: #484E56;
+}
+
+.collectible_single {
+  background-color: #b9a0ff;
+  color: #000;
+  border-radius: 7px;
+  padding: 15px;
+}
+.collectible_head {
+  display: flex;
+  justify-content: space-between;
+}
+.collectible_single p:first-child{
+  background-color: #000;
+  color: #fff;
+  padding: 5px;
+  border-radius: 7px;
+}
+br {
+  display: inline;
+}
+
+@media only screen and (max-width: 600px) {
+  body{
+    overflow-x: hidden;
+   }
+  .home div h1 {
+    font-size: 15px;
+}
+.home{
+  padding: 0;
+}
+.logo{
+  padding: 35px;
+}
+.home div h1 img{
+  width: 100px;
+}
+.events_left_wrapper {
+  height: 50rem;
+}
+.events_right_wrapper {
+  padding: 22px 26px 35px 18px;
+}
+.toogle_btn{
+  text-align: center;
+}
+.events_text h1{
+  font-size: 56px;
+}
+.events_slider { 
+  top: 0; 
+}
+.events_left_wrapper{
+  height: 50rem;
+}
+.join_btn { 
+  font-size: 11px; 
+}
+br {
+  display: none;
+}
 }
